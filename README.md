@@ -20,7 +20,7 @@ Este es un proyecto sencillo desarrollado en JavaScript puro que te permite crea
 
 ## Demo
 
-Compruebe el [demo aqui]().
+Compruebe el [demo aqui](https://firulais-qr.netlify.app/).
 
 ## Tecnologias
 
