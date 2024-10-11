@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="assets/favicon-32x32.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de códigos QR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ["Poppins", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="bg-slate min-h-screen flex flex-col  ">
+    <header class="bg-[#2F424C] p-4 mb-10">
+        <div class="max-w-5xl m-auto flex gap-2  ">
+            <a href="#"><img src="assets/favicon-32x32.png" alt="logo" draggable="false"></a>
+            <div class="text-xl font-bold text-white m-auto"> Generador de códigos QR </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <div class="flex flex-col-reverse align-center justify-center m-auto md:max-w-5xl md:flex-row">
+            <div class="w-full md:w-2/3 mr-24 p-10">
+                <h1 class="text-3xl font-bold mb-5 md:text-5xl">
+                    Firulais QR
+                </h1>
+                <p class="mb-4">Ingrese su URL y seleccione el tamaño para generar el código QR.</p>
+                <form id="generate" class="mt-4">
+                    <input id="url" type="url" placeholder="Introduzca una URL"
+                        class="w-full border-2 border-gray-200 rounded p-3 text-gray-dark mr-2 focus:outline-none mb-5 required">
+                    <select id="size"
+                        class="w-full border-2 border-gray-200 rounded p-3 text-gray-dark mr-2 focus:outline-none">
+                        <option value="100" class="">100x100</option>
+                        <option value="200" class="">200x200</option>
+                        <option value="300" class="" selected>300x300</option>
+                        <option value="400" class="">400x400</option>
+                        <option value="500" class="">500x500</option>
+                    </select>
+                    <div class="flex align-center mt-5">
+                        <input type="color" id="color">
+                        <label for="pick the color" class="ml-2">Pick the color</label>
+                    </div>
+                    <button class="bg-gray-500 rounded w-full text-white py-3 px-4 mt-5 hover:bg-[#935C38]"
+                        type="submit">Generate QR Code</button>
+                </form>
+            </div>
+
+            <div class="w-full md:w-2/3 p-10 clear: both;">
+                <img src="assets/code.png" alt="qr code" draggable="false" class="w-1/2 m-auto md:w-full rounded">
+            </div>
+        </div>
+
+        <hr />
+        <div id='generated' class="flex flex-col align-center justify-center m-auto md:max-w-5xl md:flex-row">
+            <div id="qrcode" class="w-full md:w-2/3 mr-24 p-10"></div>
+            <div id="download" class="w-full md:w-2/3 p-10"></div>
+        </div>
+    </main>
+        <footer class="bg-[#2F424C] p-4">
+            <div class="max-w-5xl m-auto">
+                <div class="copyright-wrap d-md-flex py-4">
+                    <div class="me-md-auto text-center text-md-start">
+                        <div class="copyright text-white">
+                            &copy; Copyright <strong><span>Josías delima 2024</span></strong>
+                        </div>
+                    </div>
+                    <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    <script src="script.js"></script>
+</body>
+</html>
